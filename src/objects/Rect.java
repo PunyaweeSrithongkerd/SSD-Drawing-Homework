@@ -1,14 +1,22 @@
 package objects;
 
 import java.awt.*;
+import java.util.List;
 
 public class Rect extends GObject  {
 
 	private Color color;
+	private List<GObject> gObjects;
 	
 	public Rect(int x, int y, int width, int height, Color color) {
 		super(x, y, width, height);
 		this.color = color;
+	}
+
+	@Override
+	public List<GObject> get_object() {
+		gObjects.add(this);
+		return gObjects;
 	}
 
 	@Override

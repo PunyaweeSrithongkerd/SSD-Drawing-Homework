@@ -4,6 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.List;
 
 public abstract class GObject {
 
@@ -28,7 +29,13 @@ public abstract class GObject {
 		}
 		return false;
 	}
-	
+
+	public abstract List<GObject> get_object();
+
+	public boolean is_selected(){
+		return this.selected;
+	}
+
 	public void selected() {
 		this.selected = true;
 	}

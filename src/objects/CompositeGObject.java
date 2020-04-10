@@ -14,6 +14,11 @@ public class CompositeGObject extends GObject {
 		gObjects = new ArrayList<GObject>();
 	}
 
+	@Override
+	public List<GObject> get_object() {
+		return gObjects;
+	}
+
 	public void add(GObject gObject) {
 		gObjects.add(gObject);
 	}
@@ -64,6 +69,6 @@ public class CompositeGObject extends GObject {
 
 	@Override
 	public void paintLabel(Graphics g) {
-		g.drawString("Group",this.x,this.y-this.height);
+		g.drawString("Group",this.x,this.y-this.height - 10);
 	}
 }
