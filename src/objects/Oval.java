@@ -1,7 +1,6 @@
 package objects;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 
 public class Oval extends GObject {
 
@@ -14,12 +13,17 @@ public class Oval extends GObject {
 
 	@Override
 	public void paintObject(Graphics g) {
-		// TODO: Implement this method.
+		/* Set color */
+		g.setColor(color);
+		/* Draw an oval */
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.fillOval(x, y, width, height);
 	}
 	
 	@Override
 	public void paintLabel(Graphics g) {
-		// TODO: Implement this method.
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.drawString("Oval", this.x, this.y - this.height - 10);
 	}
 	
 }
